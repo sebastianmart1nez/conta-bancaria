@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sessão</title>
+</head>
+<body>
+<div class="container">
+    <h1>MartiBank</h1>
+    <p class="subtitulo">Aceda à sua conta</p>
+    <div th:if="${erro}" class="msg erro" th:text="${erro}"></div>
+    <div class="card">
+        <form action="#" th:action="@{/login}" method="post">
+            <div class="form-group">
+                <label for="username">Nome de usuário</label>
+                <input type="text" id="username" name="username" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="password">Palavra-passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+        <div class="link">
+            Ainda não tens conta? <a href="/" th:href="@{/registro}">Registra-te aqui</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
